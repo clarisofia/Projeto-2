@@ -1,0 +1,23 @@
+<div class="task-container">
+    <mat-toolbar color="primary">
+      <span>Lista de tarefas</span>
+    </mat-toolbar>
+  
+    <div class="task-form">
+      <mat-form-field appearance="fill">
+        <mat-label>Task</mat-label>
+        <input matInput [(ngModel)]="newTask" placeholder="Adicionar tarefa" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addTask()">Adicionar Tarefa</button>
+    </div>
+  
+    <mat-list>
+      <mat-list-item *ngFor="let task of tasks">
+        {{ task }}
+        <button mat-icon-button color="warn" (click)="removeTask(task)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  
